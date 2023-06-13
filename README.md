@@ -1,11 +1,11 @@
-About nhs-number
-================
+About nhs-number-feedstock
+==========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/nhs-number-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/andylaw/NhsNumberChecks
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/nhs-number-feedstock/blob/master/LICENSE.txt)
 
 Summary: Python library for checking the validity of NHS Numbers
 
@@ -15,8 +15,8 @@ Current build status
 
 <table><tr><td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12101&branchName=master">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/nhs-number-feedstock?branchName=master">
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12101&branchName=main">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/nhs-number-feedstock?branchName=main">
       </a>
     </td>
   </tr>
@@ -36,25 +36,52 @@ Installing `nhs-number` from the `conda-forge` channel can be achieved by adding
 
 ```
 conda config --add channels conda-forge
+conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `nhs-number` can be installed with:
+Once the `conda-forge` channel has been enabled, `nhs-number` can be installed with `conda`:
 
 ```
 conda install nhs-number
 ```
 
-It is possible to list all of the versions of `nhs-number` available on your platform with:
+or with `mamba`:
+
+```
+mamba install nhs-number
+```
+
+It is possible to list all of the versions of `nhs-number` available on your platform with `conda`:
 
 ```
 conda search nhs-number --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search nhs-number --channel conda-forge
+```
+
+Alternatively, `mamba repoquery` may provide more information:
+
+```
+# Search all versions available on your platform:
+mamba repoquery search nhs-number --channel conda-forge
+
+# List packages depending on `nhs-number`:
+mamba repoquery whoneeds nhs-number --channel conda-forge
+
+# List dependencies of `nhs-number`:
+mamba repoquery depends nhs-number --channel conda-forge
 ```
 
 
 About conda-forge
 =================
 
-[![Powered by NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](http://numfocus.org)
+[![Powered by
+NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](https://numfocus.org)
 
 conda-forge is a community-led conda channel of installable packages.
 In order to provide high-quality builds, the process has been automated into the
@@ -64,10 +91,12 @@ for each of the installable packages. Such a repository is known as a *feedstock
 A feedstock is made up of a conda recipe (the instructions on what and how to build
 the package) and the necessary configurations for automatic building using freely
 available continuous integration services. Thanks to the awesome service provided by
-[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/)
-and [TravisCI](https://travis-ci.com/) it is possible to build and upload installable
-packages to the [conda-forge](https://anaconda.org/conda-forge)
-[Anaconda-Cloud](https://anaconda.org/) channel for Linux, Windows and OSX respectively.
+[Azure](https://azure.microsoft.com/en-us/services/devops/), [GitHub](https://github.com/),
+[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
+[Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
+it is possible to build and upload installable packages to the
+[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
 [conda-smithy](https://github.com/conda-forge/conda-smithy) has been developed.
